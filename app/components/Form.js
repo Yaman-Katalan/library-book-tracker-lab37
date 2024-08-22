@@ -1,4 +1,3 @@
-// app/components/Form.js
 "use client"; // Add this line at the top
 
 import { useState } from "react";
@@ -20,12 +19,12 @@ export default function Form({ addBook }) {
 
   return (
     <form
-      className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4"
       onSubmit={handleSubmit}
     >
       <div className="mb-4">
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
           htmlFor="title"
         >
           Title
@@ -35,13 +34,13 @@ export default function Form({ addBook }) {
           id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600"
           placeholder="Enter book title"
         />
       </div>
       <div className="mb-4">
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
           htmlFor="author"
         >
           Author
@@ -51,13 +50,13 @@ export default function Form({ addBook }) {
           id="author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600"
           placeholder="Enter author name"
         />
       </div>
       <div className="mb-4">
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
           htmlFor="genre"
         >
           Genre
@@ -67,7 +66,7 @@ export default function Form({ addBook }) {
           id="genre"
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600"
           placeholder="Enter genre"
         />
       </div>
