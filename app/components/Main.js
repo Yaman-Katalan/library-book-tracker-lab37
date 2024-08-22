@@ -1,25 +1,22 @@
-// app/components/Main.js
-"use client"; // Add this line at the top
+"use client";
 
-import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 import Form from "./Form";
 import Toast from "./Toast";
 import BooksList from "./BooksList";
 
 export default function Main() {
-  const [books, setBooks] = useState([]);
-  const [lastBook, setLastBook] = useState(null);
-
-  const addBook = (book) => {
-    setBooks([...books, book]);
-    setLastBook(book);
-  };
+  const { theme } = useTheme();
 
   return (
-    <main className="container mx-auto px-4">
-      <Form addBook={addBook} />
-      <BooksList books={books} />
-      <Toast book={lastBook} />
+    <main
+      className={`container mx-auto px-4 py-8 ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
+      <Form />
+      <Toast />
+      <BooksList />
     </main>
   );
 }
