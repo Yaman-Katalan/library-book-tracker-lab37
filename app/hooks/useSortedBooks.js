@@ -1,8 +1,10 @@
 // app/hooks/useSortedBooks.js
 import { useMemo } from "react";
 
-export default function useSortedBooks(books) {
+const useSortedBooks = (books) => {
   return useMemo(() => {
-    return books.slice().sort((a, b) => a.title.localeCompare(b.title));
+    return [...books].sort((a, b) => a.title.localeCompare(b.title));
   }, [books]);
-}
+};
+
+export default useSortedBooks;

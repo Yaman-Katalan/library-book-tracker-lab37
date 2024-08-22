@@ -14,5 +14,6 @@ module.exports = {
       },
     },
   },
+  darkMode: 'class', // Ensure dark mode is enabled with the class strategy
   plugins: [],
 };

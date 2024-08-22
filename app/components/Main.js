@@ -1,5 +1,4 @@
-// app/components/Main.js
-"use client"; // Add this line at the top
+"use client"; // Ensure this is a client component
 
 import { useState } from "react";
 import Form from "./Form";
@@ -16,7 +15,7 @@ export default function Main() {
   };
 
   return (
-    <main className="container mx-auto px-4">
+    <main className="container mx-auto px-4 dark:bg-gray-900 dark:text-white">
       <Form addBook={addBook} />
       <BooksList books={books} />
       <Toast book={lastBook} />

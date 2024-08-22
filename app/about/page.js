@@ -1,4 +1,3 @@
-// app/about/page.js
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -6,7 +5,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 dark:bg-gray-900 dark:text-white">
         <h1 className="text-2xl font-bold mb-4">About Us</h1>
         <p>
           Welcome to the Library Book Tracker app! This app allows you to track
