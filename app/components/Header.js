@@ -1,10 +1,13 @@
+// app/components/Header.js
 "use client"; // Ensure this is a client component
 
 import Link from "next/link";
 import { useTheme } from "../context/ThemeContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const { user, logout } = useAuth();
 
   return (
     <header className="bg-blue-600 text-white py-4 dark:bg-gray-800 dark:text-gray-200">
@@ -22,6 +25,18 @@ export default function Header() {
         >
           {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
         </button>
+        {user ? (
+          <button
+            onClick={logout}
+            className="ml-4 px-4 py-2 bg-red-500 text-white rounded"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link href="/login" className="ml-4 px-4 py-2 bg-blue-500 text-white rounded">
+            Login
+          </Link>
+        )}
       </nav>
     </header>
   );
